@@ -1,0 +1,7 @@
+ssh -I TT.pem ec2-18-223-112-239.us-east-2.compute.amazonaws.com
+ssh ec2-18-223-112-239.us-east-2.compute.amazonaws.com
+chmod 400 /Users/u16723180/Desktop/test1.pem
+
+Host *amazonaws.com
+IdentityFile ~/.ssh/TT.pem
+User ec2-user
