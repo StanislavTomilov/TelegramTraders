@@ -5,3 +5,5 @@ chmod 400 /Users/u16723180/Desktop/test1.pem
 Host *amazonaws.com
 IdentityFile ~/.ssh/TT.pem
 User ec2-user
+
+/etc /yum /repo
