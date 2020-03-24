@@ -27,6 +27,7 @@ First Name : Margin Whales | @crypto_solyanka Chat ID : 981862130 User Name = cr
 """
 
 chat_id_list = {
+                "test": -384882468,
                 "crypto_solyanka_cryptoangel_bot": 940152572,
                 "crypto_solyanka_cointrade_bot": 969227740,
                 "crypto_solyanka_german_bot": 964236548,
@@ -43,7 +44,7 @@ chat_id_list = {
 @app.on_message()
 def start_app(t_client, message) -> None:
     for key in chat_id_list:
-        if message.chat_id == chat_id_list[key]:
+        if message.chat.id == chat_id_list[key]:
             t_client.send_message(-1001442805574, message.text)
 
 app.run()
