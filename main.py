@@ -45,6 +45,8 @@ chat_id_list = {
 def start_app(t_client, message) -> None:
     for key in chat_id_list:
         if message.chat.id == chat_id_list[key]:
+            t_client.send_message(-1001442805574, message.chat.title)
+            t_client.send_message(-1001442805574, message.photo)
             t_client.send_message(-1001442805574, message.text)
 
 app.run()
