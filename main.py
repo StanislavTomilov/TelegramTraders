@@ -29,8 +29,16 @@ crypto_solyanka_dict = {
                         938258245: -1001412736228       #crypto_solyanka_palm_bot
                         }
 
+telegram_trader_news_dict = {
+                        -1001451038127: -1001264231743,  # Криптовалюта ICO
+                        #-1001120865700: -1001264231743,  # Top Traders
+                        -1001473033076: -1001264231743,  # Крипто тренды News
+                        -1001147571806: -1001264231743,  # CRYPTO SEKTA
+                        }
+
 crypto_solyanka_list = [key for key in crypto_solyanka_dict.keys()]
 tt_list = [value for value in crypto_solyanka_dict.values()]
+telegram_trader_news_list = [key for key in telegram_trader_news_dict.keys()]
 
 
 def tt_sender(message):
@@ -43,7 +51,9 @@ def tt_sender(message):
 @app.on_message()
 def start_app(t_client, message) -> None:
     if message.chat.id in crypto_solyanka_list:
-        new_message = message.forward(chat_id=crypto_solyanka_dict[message.chat.id], as_copy=True)
+        new_message = message.forward(chat_id = crypto_solyanka_dict[message.chat.id], as_copy = True)
         tt_sender(new_message)
+    elif message.chat.id in telegram_trader_news_list:
+        message.forward(chat_id = telegram_trader_news_dict[message.chat.id], as_copy = True)
 
 app.run()
